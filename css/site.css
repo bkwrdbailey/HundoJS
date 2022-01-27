@@ -21,33 +21,6 @@ pre[class*="language-"] {
     word-wrap: break-word;
 }
 
-.sticky-footer {
-    position: sticky;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-}
-
-.bsicon {
-    color: purple;
-}
-
-.jsicon {
-    color: rgb(248, 248, 0);
-}
-
-.html5icon {
-    color: orangered;
-}
-
-.cssicon {
-    color: blue;
-}
-
-.checklist >li i{
-    color:  var(--secondary-color);
-}
-
 footer {
     background-color: var(--dark-color);
 }
@@ -60,4 +33,39 @@ footer .social>a {
 footer .social>a:hover {
     color: var(--secondary-color);
     opacity: 0.90;
+}
+
+.bsicon {
+    color: purple;
+}
+
+.cssicon {
+    color: blue;
+}
+
+.checklist >li i{
+    color:  var(--secondary-color);
+}
+
+.even {
+    font-weight: 700;
+}
+
+.html5icon {
+    color: orangered;
+}
+
+.jsicon {
+    color: rgb(248, 248, 0);
+}
+
+.odd {
+    font-weight: 200;
+}
+
+.sticky-footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }

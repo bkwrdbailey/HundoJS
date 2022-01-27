@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Bailey Barton</title>
+    <title>HUNDO: A Coding Project By Bailey Barton</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +21,7 @@
     <!-- === Nav Section ===-->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img class="d-inline-block align-text-top" src="img/BaileyBarton_WhtLogo.svg" width="36" height="30"> APP NAME</a>
+        <a class="navbar-brand" href="#"><img class="d-inline-block align-text-top" src="img/BaileyBarton_WhtLogo.svg" width="36" height="30"> HUNDO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -49,36 +49,40 @@
     </nav>
     <!-- === Main Section === -->
     <main class="flex-shrink-0">
-        <div class="container col-xxl-8 px-4 py-5">
-            <div class="row g-5 py-5 row-cols-1 row-cols-lg-2">
-                <div class="col order-last order-lg-first">
-                     <h1 class="display-5 fw-bold mb-3 lh-1">APP NAME: A Coding Project</h1>
-                     <h4 class="lead">Project Description Here</h4>
-                     <ul class="fa-ul pt-2 checklist">
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>CSS and Bootstrap Layout</li>
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Javascript Fundamentals</li>
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Javascript Loops</li>
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Javascript Functions</li>
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Javascript DOM Manipulation</li>
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Javascript If/Then/Else</li>
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Javascript Boolean Logic</li>
-                     </ul>
-                     <div>
-                         <button type="button" class="btn btn-outline-dark btn-lg px-4 me-md-2" href="app.html">Try It Out!</button>
-                     </div>
-                     <h5 class="fw-bold mt-5">
-                         <div class="d-flex">
-                             <div class="row">
-                                 <div class="col"><i class="fab fa-js-square fa-5x jsicon"></i></div>
-                                 <div class="col"><i class="fab fa-bootstrap fa-5x bsicon"></i></div>
-                                 <div class="col"><i class="fab fa-html5 fa-5x html5icon"></i></div>
-                                 <div class="col"><i class="fab fa-css3-alt fa-5x cssicon"></i></div>
-                             </div>
-                         </div>
-                     </h5>
+        <div class="container mt-5">
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col-lg-4 col border-end border-2">
+                    <h1>HUNDO: A Coding Project</h1>
+                    <h4 class="lead">
+                        This program can display all numbers from 0 to 100 with the power of <span style="font-weight: 700">LOOPS</span>!
+                        Even integers will be outputted in <span style = "font-weight: 700">BOLD</span> while odd integers will be outputted normally.
+                    </h4>
+                    <h2 class="mt-5 border-bottom border-2">Instructions</h2>
+                    <p>Enter a starting value and a ending value. Press the button and the the resulting numbers inbetween the two values will be displayed.</p>
                 </div>
-                <div class="col">
-                    <!-- <img src="#" class='img-fluid center-block d-block mx-auto' alt="App Logo Desc" width="700" height="500"> -->
+                <div class="col-lg-8 col">
+                    <div>
+                        <h5>Enter Values</h5>
+                        <form class="row gy-2 gx-3">
+                            <div class="col">
+                                <input id="startValue" type="number" class="form-control" placeholder="Start Value" value=0 aria-label="Start Value">
+                            </div>
+                            <div class="col">
+                                <input id="endValue" type="number" class="form-control" placeholder="End Value" value=100 aria-label="End Value">
+                            </div>
+                            <div class="col-12 d-flex justify-content-end">
+                                <button id="btnSubmit" type="button" class="btn btn-dark btn-lg">Display The Hundo</button>
+                            </div>
+                        </form>
+                        <h2 class="mt-5 border-bottom border-2">Results</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-sm">
+                                <tbody id="results">
+                                    <!--Results go here-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,8 +113,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
-    <script src="js/site.js">
-
+    <script src="js/site.js"></script>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", getValues);
     </script>
 </body>
 

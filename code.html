@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Bailey Barton</title>
+    <title>HUNDO: A Coding Project By Bailey Barton</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +22,7 @@
     <!-- === Nav Section ===-->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img class="d-inline-block align-text-top" src="img/BaileyBarton_WhtLogo.svg" width="36" height="30"> APP NAME</a>
+        <a class="navbar-brand" href="#"><img class="d-inline-block align-text-top" src="img/BaileyBarton_WhtLogo.svg" width="36" height="30"> HUNDO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,21 +51,85 @@
     <!-- === Main Section === -->
     <main class="flex-shrink-0">
         <div class="container py-4 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for HUNDO</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        // Calls Hello World
-                        function helloWorld() {
-                            alert("hello world");
+                        // Acquires the values from the app.html page
+                        function getValues() {
+                            let startValue = document.getElementById("startValue").value;
+                            let endValue = document.getElementById("endValue").value;
+
+                            startValue = parseInt(startValue);
+                            endValue = parseInt(endValue);
+
+                            // Error handling for non integer values being inputted in the form
+                            if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+                                let numbers = generateNumbers(startValue, endValue);
+                                displayNumbers(numbers);
+
+                            } else {
+                                alert("Error: Non-integer entered");
+                            }
+                        }
+
+                        // Generates the numbers from the startValue to the endValue
+                        function generateNumbers(sValue, eValue) {
+
+                            let numbers = [];
+
+                            // This loops until every number from the sValue to the eValue has been placed in an array
+                            for (let i = sValue; i <= eValue; i++) {
+                                numbers.push(i);
+                            }
+
+                            return numbers;
+
+                        }
+
+                        // Displays the numbers to the page and bolds the even numbers
+                        function displayNumbers(numbersArr) {
+    
+                            let templateRows = "";
+
+                            for (let index = 0; index < numbersArr.length; index++) {
+
+                                let number = numbersArr[index];
+
+                                // Checks if integer is even or odd
+                                // This renders correctly as seen in source code, but Prism does not display HTML code
+                                if ((numbersArr[index] % 2) == 0) {
+                                    templateRows += `<tr><td class="even">${number}<td><tr>`;
+                                } else {
+                                    templateRows += `<tr><td class="odd">${number}<td><tr>`;
+                                }
+                            }
+
+                            document.getElementById("results").innerHTML = templateRows;
                         }
                     </code>
                     </pre>
                 </div>
                 <div class="col col-lg-4">
-                    <p>The Code is structured in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hellow World is a function that displays and alert with a message of "Hello World"</p>
+                    <p></p>
+                    <h5>HUNDO</h5>
+                    <p>HUNDO is a program that outputs values inbetween two given values, while making the even values <span class="even">BOLD</span></p>
+                    <p>There are three functions that make up this program, which happen to be <span class="even">getValues()</span>, <span class="even">generateNumbers()</span>, and <span class="even">displayNumbers()</span></p> <br>
+                    <h3>getValues()</h3> <br>
+                    <p>
+                        This function is the main function that is called within the app.html file once the "display the numbers" button is clicked.
+                        The function makes calls to the other two functions once data has been appropriately obtained and verified to be integer values.
+                    </p>
+                    <h3>generateNumbers()</h3> <br>
+                    <p>
+                        This function takes in two values in its parameter to be used within a for loop to fill out a numbers array.
+                        Once every number between and including the starting value and the end value have been placed in the numbers array the function then returns the array to the first function.
+                    </p>
+                    <h3>displayNumbers()</h3> <br>
+                    <p>
+                        This function handles the display of the numbers to the user on the app.html page by iterating through the numbers array.
+                        The added thing done in this function is the conditional if else statement that handles making even values bold, while keeping odd values unchanged for the user.
+                    </p>
                 </div>
             </div>
         </div>
