@@ -39,6 +39,10 @@ footer .social>a:hover {
     color: purple;
 }
 
+.btn:hover {
+    background-color: var(--primary-color);
+}
+
 .cssicon {
     color: blue;
 }
